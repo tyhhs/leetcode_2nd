@@ -15,6 +15,7 @@ public class Longest_Substring_Without_Repeating_Characters {
     	if(s == null || s.length() == 0){
     		return 0;
     	}
+    	
     	//array to store index of character last time appeared(one based)
     	int[] index = new int[256];
     	int max = 0;
