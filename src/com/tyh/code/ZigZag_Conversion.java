@@ -7,13 +7,13 @@ public class ZigZag_Conversion {
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		String s = "PAYPALISHIRING";
-		int numRows = 3;
+		String s = "A";
+		int numRows = 1;
 		System.out.println(new ZigZag_Conversion().convert(s, numRows));
 	}
 
     public String convert(String s, int numRows) {
-    	if(s == null || s.length() < numRows){
+    	if(s == null || s.length() < numRows || s.length() == numRows || numRows == 1){
     		return s;
     	}
     	StringBuilder res = new StringBuilder();
