@@ -11,5 +11,11 @@ public class ListTools {
 			System.out.println();
 		}
 	}
+	
+	public static void printStringList(List<String> list){
+		for(String s : list){
+			System.out.println(s);
+		}
+	}
 }
 
