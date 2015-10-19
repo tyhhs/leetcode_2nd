@@ -1,10 +1,15 @@
 package com.tyh.util;
 
+import java.util.Scanner;
+
 public class ReplaceBlankToUnderline {
 
 	public static void main(String[] args) {
-		String s = "Merge Two Sorted Lists";
-		System.out.println(s.replace(' ', '_'));
+		Scanner scanner = new Scanner(System.in);
+		String s = scanner.nextLine();
+		s = s.replace(' ', '_');
+		s = s.replace('-', '_');
+		System.out.println(s);
 	}
 
 }

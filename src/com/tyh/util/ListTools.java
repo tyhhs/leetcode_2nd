@@ -17,5 +17,11 @@ public class ListTools {
 			System.out.println(s);
 		}
 	}
+	
+	public static void printList(List<Object> list){
+		for(Object o : list){
+			System.out.println(o);
+		}
+	}
 }
 
