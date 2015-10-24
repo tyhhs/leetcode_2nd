@@ -2,7 +2,7 @@ package com.tyh.util;
 
 import java.util.Scanner;
 
-public class ReplaceBlankToUnderline {
+public class TransferClassName {
 
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
