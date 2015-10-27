@@ -26,7 +26,7 @@ public class ArrayTools {
 		int[][] matrix = new int[m][n];
 		for(int i = 0; i < m; i++){
 			for(int j = 0; j < n; j++){
-				matrix[i][j] = nums[i*3+j];
+				matrix[i][j] = nums[i*n+j];
 			}
 		}
 		return matrix;
