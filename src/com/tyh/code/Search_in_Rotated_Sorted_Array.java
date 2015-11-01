@@ -23,7 +23,7 @@ public class Search_in_Rotated_Sorted_Array {
 					high = mid - 1;
 				}
 				else{
-					low = low + 1;
+					low = mid + 1;
 				}
 			}
         	else{//nums[low] > nums[mid], the rotated point is in the first part and the second part is well sorted
