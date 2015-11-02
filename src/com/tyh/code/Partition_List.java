@@ -19,13 +19,16 @@ public class Partition_List {
     	ListNode res = new ListNode(0);
     	res.next = head;
     	ListNode cur = res;
-    	ListNode pointer = res;
+    	while(cur.next != null && cur.next.val < x){
+    		cur = cur.next;
+    	}
+    	ListNode pointer = cur;
     	while(pointer.next != null){
     		if(pointer.next.val < x){
-    			ListNode temp = cur.next.next;
+    			ListNode temp = cur.next;
     			cur.next = pointer.next;
-    			pointer.next = pointer.next.next;
     			cur = cur.next;
+    			pointer.next = pointer.next.next;
     			cur.next = temp;
     		}
     		else{

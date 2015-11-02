@@ -32,5 +32,11 @@ public class ListTools {
 			System.out.println(o);
 		}
 	}
+	
+	public static void printIntList(List<Integer> list){
+		for(int i : list){
+			System.out.println(i);
+		}
+	}
 }
 
