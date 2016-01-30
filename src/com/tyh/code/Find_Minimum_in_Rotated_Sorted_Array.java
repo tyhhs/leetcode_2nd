@@ -15,7 +15,7 @@ public class Find_Minimum_in_Rotated_Sorted_Array {
         int high = len-1;
         while (low < high){
             int mid = low + (high - low) / 2;
-            if(nums[mid] < nums[high]){//in left part
+            if(nums[high] > nums[mid]){//in left part
             	high = mid;
             }
             else{
