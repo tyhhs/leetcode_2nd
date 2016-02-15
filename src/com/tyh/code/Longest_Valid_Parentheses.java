@@ -6,9 +6,42 @@ public class Longest_Valid_Parentheses {
 
 	public static void main(String[] args) {
 		String s = ")()())";
-		System.out.println(new Longest_Valid_Parentheses().longestValidParentheses(s));
+		System.out.println(new Longest_Valid_Parentheses().longestValidParentheses2(s));
 
 	}
+	public int longestValidParentheses2(String s) {
+        if(s == null || s.length() < 2){
+            return 0;
+        }
+        //stack to store index of parentheses
+        Stack<Integer> stack = new Stack<Integer>();
+        for(int i = 0; i < s.length(); i++){
+            if(s.charAt(i) == '('){
+                stack.push(i);
+            }
+            else{
+                if(!stack.empty() && s.charAt(stack.peek()) == '('){
+                    //one pair match
+                    stack.pop();
+                }
+                else{
+                    stack.push(i);
+                }
+            }
+        }
+        if(stack.empty()){//all chars are matched
+            return s.length();
+        }
+        //now, the indices in the stack are the parentheses that cannot be matched
+        int max = 0;
+        int pre = s.length();
+        while(!stack.empty()){
+            int now = stack.pop();
+            max = Math.max(max, pre-now-1);
+        }
+        max = Math.max(max, pre - 0);
+        return max;
+    }
 /*	
 	 * The workflow of the solution is as below.
 	 * 

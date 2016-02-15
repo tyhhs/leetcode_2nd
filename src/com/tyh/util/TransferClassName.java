@@ -19,13 +19,13 @@ public class TransferClassName {
 	public void placeTextOnclipboard(String s){
 		//get the toolkit
 		Toolkit toolkit = Toolkit.getDefaultToolkit();
-		//get the clipboard
+		//get the clip board
 		Clipboard clipboard = toolkit.getSystemClipboard();
-		//The setContents method of the Clipboard instance takes a Transferable
+		//The setContents method of the Clip board instance takes a Transferable
 		//as first parameter. The StringSelection class implements the Transferable
 		//interface.
 		StringSelection stringSel = new StringSelection(s);
-		//We specify null as the clipboard owner
+		//We specify null as the clip board owner
 		clipboard.setContents(stringSel, null);
 	}
 }

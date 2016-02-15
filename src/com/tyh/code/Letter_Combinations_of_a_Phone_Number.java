@@ -1,6 +1,7 @@
 package com.tyh.code;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 import com.tyh.util.ListTools;
@@ -13,7 +14,27 @@ public class Letter_Combinations_of_a_Phone_Number {
 		ListTools.printStringList(list);
 	}
 
-    public List<String> letterCombinations(String digits) {
+	public List<String> letterCombinations(String digits) {
+        if(digits == null || digits.length() == 0){
+            return new ArrayList<String>();
+        }
+        LinkedList<String> res = new LinkedList<String>();
+        res.offer("");
+        String[] map = {"0", "1", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"};
+        char[] chars = digits.toCharArray();
+        for(int i = 0; i < chars.length; i++){
+        	int num = chars[i] - '0';
+            while(res.peek().length() == i){
+                String pre = res.pop();
+                for(char c : map[num].toCharArray()){
+                    res.offer(pre + c);
+                }
+            }
+        }
+        return res;
+    }
+	
+    public List<String> letterCombinations2(String digits) {
         List<String> list = new ArrayList<String>();
         if (digits.length()==0) {
 			return list;
